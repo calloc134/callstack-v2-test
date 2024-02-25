@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "tsx watch ./src/index.ts",
+    "build": "tsx build ./src/index.ts",
+    "start": "node ./dist/index.mjs",
+    "lint": "eslint --ext .ts .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "graphql-scalars": "^1.22.5",
+    "graphql-yoga": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "esbuild": "^0.20.1",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
