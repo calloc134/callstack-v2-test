@@ -8,6 +8,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # setup repository path
+    volumes:
+      - type: bind
+        source: ../
+        target: /workspaces/repo
+        consistency: cached
     environment:
       SCHEMA_PATH: ${SCHEMA_PATH}
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
