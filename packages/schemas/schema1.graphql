@@ -1,0 +1,20 @@
+# User role
+enum Role {
+  ADMIN
+  USER
+}
+
+# Auth directive
+directive @auth(role: Role! = USER) on FIELD_DEFINITION
+
+# File scalar
+scalar File
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  me: User
+}
