@@ -8,12 +8,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-
     environment:
-      - SCHEMA_PATH=${SCHEMA_PATH}
-      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
-      - MINIO_BUCKET_NAME=${MINIO_BUCKET_NAME}
+      SCHEMA_PATH: ${SCHEMA_PATH}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_BUCKET_NAME: ${MINIO_BUCKET_NAME}
     env_file: ${CODESPACE_ENV}
     command: sleep infinity
     networks:
@@ -38,16 +37,15 @@ services:
         source: minio-data
         target: /data
     environment:
-      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
     networks:
       - app-network
+    command: server /data
     ports:
       - 9000:9000
       - 9001:9001
+
 volumes:
   postgres-data:
   minio-data:
-  root-data:
-  frontend-data:
-  backend-data:
