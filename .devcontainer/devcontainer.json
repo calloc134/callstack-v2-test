@@ -1,0 +1,51 @@
+{
+  "name": "Node.js & PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/repo",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/pnpm:2": {
+      "version": "latest"
+    }
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // This can be used to network with other containers or with the host.
+  "forwardPorts": [6173, 5173, 9000, 9001],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "pnpm install",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "redhat.vscode-yaml",
+        "zhuangtongfa.material-theme",
+        "dsznajder.es7-react-js-snippets",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "yzhang.markdown-all-in-one",
+        "naumovs.color-highlight",
+        "vscode.json-language-features",
+        "GraphQL.vscode-graphql",
+        "vscode.git",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "PKief.material-icon-theme",
+        "oderwat.indent-rainbow",
+        "formulahendry.auto-close-tag",
+        "markdown.showPreview",
+        "eamodio.gitlens",
+        "GitHub.vscode-pull-request-github",
+        "ms-azuretools.vscode-docker",
+        "capaj.graphql-codegen-vscode"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  }
+}
