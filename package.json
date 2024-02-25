@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "graphql-config": "^5.0.3",
     "turbo": "^1.12.4"
   }
 }
