@@ -11,6 +11,16 @@
   "forwardPorts": [6173, 5173, 9000, 9001],
   "postCreateCommand": "pnpm install",
   "customizations": {
+    "codespaces": {
+      "repositories": {
+        "calloc134/callstack-v2-backend": {
+          "permissions": "write-all"
+        },
+        "calloc134/callstack-v2-frontend": {
+          "permissions": "write-all"
+        }
+      }
+    },
     "vscode": {
       "extensions": [
         "GitHub.copilot",
