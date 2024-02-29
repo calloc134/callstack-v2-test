@@ -1,14 +1,28 @@
-# User role
+# auth directive
+directive @auth(role: Role! = USER) on FIELD_DEFINITION
+
+# from graphql-scalars
+scalar UUID
+scalar DateTime
+scalar File
+
+# User type
+type User {
+  id: UUID!
+  handle: String!
+  screen_name: String!
+  bio: String!
+  created_date: String!
+  updated_date: String!
+  image_url: String!
+  role: Role!
+}
+
+# user role
 enum Role {
   ADMIN
   USER
 }
-
-# Auth directive
-directive @auth(role: Role! = USER) on FIELD_DEFINITION
-
-# File scalar
-scalar File
 
 schema {
   query: Query
@@ -16,5 +30,14 @@ schema {
 }
 
 type Query {
-  me: User
+  getMyProfile: User! @auth(role: USER)
+  getProfileById(id: ID!): User! @auth(role: ADMIN)
+}
+
+type Mutation {
+  updateBioInProfile(bio: String!): User! @auth(role: USER)
+  updatehandleInProfile(handle: String!): User! @auth(role: USER)
+  updateScreenNameInProfile(screen_name: String!): User! @auth(role: USER)
+  uploadImageInProfile(image: File!): User! @auth(role: USER)
+  updateRoleInProfile(role: Role!): User! @auth(role: ADMIN)
 }
