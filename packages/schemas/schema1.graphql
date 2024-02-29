@@ -1,6 +1,3 @@
-# auth directive
-directive @auth(role: Role! = USER) on FIELD_DEFINITION
-
 # from graphql-scalars
 scalar UUID
 scalar DateTime
@@ -30,14 +27,14 @@ schema {
 }
 
 type Query {
-  getMyProfile: User! @auth(role: USER)
-  getProfileById(id: ID!): User! @auth(role: ADMIN)
+  getMyProfile: User!
+  getProfileById(id: ID!): User!
 }
 
 type Mutation {
-  updateBioInProfile(bio: String!): User! @auth(role: USER)
-  updatehandleInProfile(handle: String!): User! @auth(role: USER)
-  updateScreenNameInProfile(screen_name: String!): User! @auth(role: USER)
-  uploadImageInProfile(image: File!): User! @auth(role: USER)
-  updateRoleInProfile(role: Role!): User! @auth(role: ADMIN)
+  updateBioInProfile(bio: String!): User!
+  updatehandleInProfile(handle: String!): User!
+  updateScreenNameInProfile(screen_name: String!): User!
+  uploadImageInProfile(image: File!): User!
+  updateRoleInProfile(role: Role!): User!
 }
