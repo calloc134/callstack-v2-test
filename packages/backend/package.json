@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-resolvers": "^4.0.6",
     "@types/node": "^20.11.20",
     "@types/pg": "^8.11.2",
     "drizzle-kit": "^0.20.14",
