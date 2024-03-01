@@ -5,10 +5,10 @@ const config: CodegenConfig = {
   // path to the GraphQL schema file
   schema: process.env.SCHEMA_PATH,
   generates: {
-    "src/lib/generated/resolver-types.ts": {
+    "src/infrastructure/yoga/generated/types.ts": {
       plugins: ["typescript", "typescript-resolvers"],
       config: {
-        contextType: "../../context#GraphQLContext",
+        contextType: "src/infrastructure/yoga/context#GraphQLContext",
         strictScalars: true,
         scalars: {
           UUID: "string",
