@@ -17,6 +17,7 @@
     "@envelop/auth0": "^6.0.0",
     "@envelop/core": "^5.0.0",
     "@envelop/generic-auth": "^7.0.0",
+    "@graphql-tools/load-files": "^7.0.0",
     "drizzle-orm": "^0.29.4",
     "graphql": "^16.8.1",
     "graphql-scalars": "^1.22.5",
